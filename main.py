@@ -2,10 +2,41 @@ from flask import Flask
 from flask import render_template, render_template_string
 from flask import request
 import sys
+import sqlite3
+from flask import g
 
 STATIC_URL = '/static/'
 app = Flask(__name__, static_url_path='/static')
 app.debug = True
+
+
+
+DATABASE = 'database.db'
+
+
+def connect_to_database():
+    db = sqlite3.connect(DATABASE)
+
+    c = db.cursor()
+    
+    c.execute('CREATE TABLE contacts (full_name text, email text, phone text)')
+
+    db.commit()
+
+    return db
+
+
+def get_db():
+    db = getattr(g, '_database', None)
+    if db is None:
+        db = g._database = connect_to_database()
+    return db
+
+@app.teardown_appcontext
+def close_connection(exception):
+    db = getattr(g, '_database', None)
+    if db is not None:
+        db.close()
 
 
 
@@ -39,11 +70,15 @@ def contact():
         email=request.form['email']
         phone=request.form['phone']
 
-        msg = render_template('email-template/email.html', name=full_name, email=email, phone=phone)
-
-
+        # msg = render_template('email-template/email.html', name=full_name, email=email, phone=phone)
         #here you would actually send the email
-        pass
+
+        db = get_db()
+
+        c = db.cursor()
+        c.execute('INSERT INTO contacts (full_name, email, phone) VALUES (?,?,?)', (full_name, email, phone))
+        db.commit()
+
 
         return 'OK'
     else:
