@@ -1,0 +1,292 @@
+<html lang="en">
+{% block head %}
+
+  <title>Organic Food and Fruits  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="Fruits , Strawberry, blackberry, grapres" />
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
+  <script src="{{ STATIC_URL }}js/jquery.min.js">></script>
+  <script src="{{ STATIC_URL }}js/bootstrap.js"></script>
+  <style>
+{% endblock %}
+
+{% block css %}
+body{
+font-family: 'Open Sans', sans-serif;
+}
+.navbar {
+    margin-bottom:0;
+    background-color:     #0C5660;
+    z-index: 9999;
+    border: 0;
+    font-size: 16px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: black !important;
+    background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+.dropdown-menu {
+    min-width: 130px;
+    padding:10px 0;
+    margin: 0;
+    background-color: #0C5660;
+}
+.dropdown-menu > li > a:before{
+  display:none;
+}
+.dropdown-menu > li > a {
+    display: block !important;
+    padding: 8px 21px;
+}
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: black !important;
+    background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+
+  .jumbotron {
+    position: relative;
+    width:100% ;
+    height: 72%;
+    background-size: cover;
+    overflow: hidden;
+}
+ .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+  }
+  
+  .bg-1{
+   background-color: #298F9C;
+    
+  color:
+ #ccffff  ;
+  }
+  .bg-3{
+  color: #298F9C;
+  background:url("/static/images/mu.jpg");
+   background-color: ;
+   background-repeat: no-repeat;
+   }
+    .margin {margin-top: -30px;
+	}
+	  .carousel-control.right, .carousel-control.left {
+     background;
+     color: black;
+  }
+
+  
+  .carousel-indicators li.active {
+      background-color: red;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: bold;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+  }
+  .m{
+  	margin-left: 518px;
+  	padding:10px 50px;
+  }
+  .ma{
+    margin-top: 52px;
+  }
+</style>
+{% endblock %}
+<!-- Body block starts here -->
+{% block navbar %}
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<!-- Navigation bars starts-->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">Organic Food and Fruits</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/home/">Home</a></li>
+        <li><a href="/aboutus/">About</a></li>
+        <li class="dropdown">
+                <a href="#"  class="dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">
+                  Fruits <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="/blackberry/">Blackberry</a></li>
+                  <li><a href="/grapes/">Grapes</a></li>
+                  <li><a href="/straw/">Strawberry</a></li>
+                </ul>
+              </li>
+        <li><a href="/contact/">Contact</a></li>
+    
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Navigation bars ends -->
+   {% endblock %} 
+
+   {% block content %}
+   <!--Contact form Starts here-->
+   <div class="container-fluid bg-1 text-center ma">
+    <p><h2>Contact us </h2> </p>
+   </div>
+        <div data-scrollable>
+        <div class="text-center"><h3 class="category ">Fill Up This form to know more</h3></div>
+        <div class="sidebar-block">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="col-sm-2"></div>
+            <div class="col-lg-8">
+              <form id="contactform" action="#">
+                <span id="successmsg" style="display:none;color:green;">Your contact details have been saved to database.We will contact you soon.</span>
+                <span id="empty_message" style="display:none;color:red">Please fill all required fields.</span>
+                <span id="loading" style="display:none;color:green;">Sending...</span>
+                <div class="form-group form-control-default required">
+                  <label for="fullname">Full Name</label>
+                  <input type="text" id="full_name" placeholder="Your Full Name" class="form-control" id="fullname" />
+                </div>
+                <div class="form-group form-control-default required">
+                  <label for="phone">Phone</label>
+                  <input type="text" id="phone" placeholder="Contact Phone" class="form-control" id="phone" maxlength="10" />
+                </div>
+                <div class="form-group form-control-default required">
+                  <label for="email">Email Address</label>
+                  <input type="text" id="email" placeholder="Enter your Email" class="form-control" id="email" />
+                  <span id="emvalid" style="display:none;color:red">Please enter a valid email id</span>
+                </div>
+                <button type="submit" id="sub" class="btn btn-info m">Submit</button>
+              </form>
+            </div>
+             <div class="col-sm-2"></div>
+          </div>
+          </div>
+        </div>
+      </div>
+<!--Contact form ends here-->
+{% endblock %}
+
+
+{% block js %}
+
+<!--Script of validation and ajax-->
+<script type="text/javascript">
+ $('input:text[id="phone"]').bind('keyup blur', function() {
+        $(this).val ( $(this).val().replace(/[^0-9]/g,'') );
+  });
+
+ $('input:text[id="full_name"]').bind('keyup blur', function(){  
+        $(this).val( $(this).val().replace(/[^a-zA-Z ]/g,'') );  
+    });  
+
+ $("#email").blur(function(){
+        var useremail=$('#email').val();
+        var em=validateEmail(useremail);
+        if (em==true){
+            console.log('email is valid');
+        }else{
+            console.log('email is invalid');
+            $("#emvalid").show().delay(5000).fadeOut();
+        }
+        
+    });
+    
+    function validateEmail($email) {
+        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        return emailReg.test($email);
+    }
+
+///better to intercept the submit event on the form, than the click event on the submit button
+/// because the click event for the submit button is not triggered all the time, for example, if someone
+/// presses enter inside the form
+$('#contactform').on('submit', function(evt){
+
+  ///when you are intercepting the submit event, on a form, you need to prevent the default behavior
+  /// of going to a new page.
+  evt.preventDefault();
+  
+  if($('#full_name').val() == '' || $('#email').val() == '' ||  $('#phone').val() == ''){
+      $("#empty_message").show().delay(5000).fadeOut();
+  }else{
+      console.log('every field is filled')
+      $('#loading').show();
+      //var token = $.cookie('csrftoken');
+      var full_name=$('#full_name').val();
+      var phone=$('#phone').val();
+      var email=$('#email').val();
+      var params = {'full_name':full_name,'email':email, 'phone':phone};
+      $.ajax({
+          method:"POST",
+          url:"/contact/",
+          data: params,
+          success: function(res){
+              // console.log('here');
+              if(res=='OK'){
+                $('#full_name').val('');
+                $('#email').val('');
+                $('#phone').val('');
+                $("#loading").hide();
+                $("#successmsg").show().delay(5000).fadeOut();
+              }else{
+                console.log('not saved')
+              }
+          }
+      });
+
+      }
+});
+</script>
+ <!--Script of validation and ajax  ends-->
+{% endblock %}
+{% block footer %}
+<footer class="navbar-default bg-3 text-center">
+
+ <div class="container">
+    <div class="row">
+        
+  <h5>Copyright@ <i><a href="">2016</a></i></h5> 
+</div> </div>
+</footer>
+</body><!-- Body block ends here -->
+</html>
+
+{% endblock %}

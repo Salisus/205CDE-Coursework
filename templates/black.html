@@ -1,0 +1,227 @@
+<html lang="en">
+{% block head %}
+
+  <title>Organic Food and Fruits  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="Fruits , Strawberry, blackberry, grapres" />
+  <link rel="stylesheet" href="{{ STATIC_URL}}css/bootstrap.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
+  <script src="{{ STATIC_URL}}js/jquery.min.js">></script>
+  <script src="{{ STATIC_URL}}js/bootstrap.js"></script>
+  <style>
+{% endblock %}
+
+{% block css %}
+body{
+font-family: 'Open Sans', sans-serif;
+}
+.main-content{
+  max-height: 100%;
+  width: 100%;
+}
+.navbar {
+    margin-bottom:0;
+    background-color:     #0C5660;
+    z-index: 9999;
+    border: 0;
+    font-size: 16px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+.dropdown-menu {
+    min-width: 130px;
+    padding:10px 0;
+    margin: 0;
+    background-color: #0C5660;
+}
+.dropdown-menu > li > a:before{
+  display:none;
+}
+.dropdown-menu > li > a {
+    display: block !important;
+    padding: 8px 21px;
+}
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: black !important;
+    background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+  .jumbotron {
+    position: relative;
+    width:100% ;
+    height:70% ;
+    background-size: cover;
+    overflow: hidden;
+}
+ .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+  }
+  
+  .bg-1{
+   background-color: #26c6da;
+    
+  color:
+ #ccffff  ;
+  }
+  .bg-3{
+  color: #d9d9d9;
+  background:url("/static/images/mu.jpg");
+   background-color: #ffffff;
+   background-repeat: no-repeat;
+   }
+    .margin {margin-top: 50px;
+
+	}
+	  .carousel-control.right, .carousel-control.left {
+     background;
+     color: black;
+  }
+
+  
+  .carousel-indicators li.active {
+      background-color: red;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+     
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+  }
+  .m{
+  	margin-left: 518px;
+  	padding:10px 50px;
+  }
+  .tc{
+    text-align: center;
+  }
+
+</style>
+{% endblock %}
+<!-- Body block starts here -->
+{% block navbar %}
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<!-- Navigation bars starts-->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">Organic Food and Fruits </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/home/">Home</a></li>
+        <li><a href="/aboutus/">About</a></li>
+        <li class="dropdown">
+                <a href="#"  class="dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">
+                  Fruits <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="/blackberry/">Blackberry</a></li>
+                  <li><a href="/grapes/">Grapes</a></li>
+                  <li><a href="/straw/">Strawberry</a></li>
+                </ul>
+              </li>
+        <li><a href="/contact/">Contact</a></li>
+		
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Navigation bars ends -->
+   {% endblock %} 
+
+   {% block content %}
+   <!-- Page Content -->
+    <div class="container-fluid margin">
+
+        <!-- Heading Row -->
+        <div class="row">
+            <div class="col-md-8">
+                <img class="img-responsive img-rounded" src="{{ STATIC_URL}}images/blackberry.jpg" alt="">
+            </div>
+            <!-- /.col-md-8 -->
+            <div class="col-md-4">
+                <h1>Blackberry</h1>
+                <p>The blackberry is an edible fruit produced by many species in the Rubus genus in the Rosaceae family, hybrids among these species within the Rubus subgenus.!</p>
+                <!--a class="btn btn-primary btn-lg" href="#">Buy Now</a-->
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Call to Action Well -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center">
+                    Organic Food and Fruits
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Health Benifits</h2>
+                <p>A good daily supply of vital nutrients is required for a glowing and perfect skin. Blackberries are rich in Vitamin A and Vitamin C. They also offer the highest levels of some antioxidants – higher than blueberries and strawberries too. The very dark color of the fruit is proof of its high antioxidant level.</p>
+                <a class="btn btn-default" href="#">More Info</a>
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-4">
+                <h2>Recipe</h2>
+                <p>Sweet-tart blackberries hold their own tossed into salads or smoothies or served alongside cheeses. When given the spotlight -- in pies, muffins, crumbles.</p>
+                <a class="btn btn-default" href="#">More Info</a>
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-4">
+                <h2>Price</h2>
+                <p>Wholesale blueberry prices are this week at $25 to $30 for a tray of 12 punnets.</p>
+                <a class="btn btn-default" href="#">More Info</a>
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+{% endblock %}
+
+{% block footer %}
+<footer class="navbar-default bg-3 text-center">
+
+ <div class="container">
+    <div class="row">
+        
+  <h5>Copyright@ <i><a href="">2016</a></i></h5> 
+</div> </div>
+</footer>
+</body><!-- Body block ends here -->
+</html>
+
+{% endblock %}
