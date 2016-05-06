@@ -19,8 +19,10 @@ def connect_to_database():
 
     c = db.cursor()
     
-    c.execute('CREATE TABLE contacts (full_name text, email text, phone text)')
-
+    try:
+        c.execute('CREATE TABLE contacts (full_name text, email text, phone text)')
+    except sqlite3.OperationalError:
+        pass
     db.commit()
 
     return db
